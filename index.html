@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Godown Management System</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a192f;
+    --bg2: #112240;
+    --bg3: #1d3461;
+    --accent: #64ffda;
+    --text: #ccd6f6;
+    --muted: #8892b0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; }
+
+  header {
+    background: var(--bg2);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--accent);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .logo { font-family: 'Poppins', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--accent); }
+  .badge { background: var(--accent); color: var(--bg); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+
+  .hero {
+    text-align: center;
+    padding: 5rem 2rem 3rem;
+    background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 100%);
+  }
+  .hero h1 { font-family: 'Poppins', sans-serif; font-size: 2.5rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+  .hero h1 span { color: var(--accent); }
+  .hero p { color: var(--muted); max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem; }
+  .tags { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+  .tag { border: 1px solid var(--accent); color: var(--accent); padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; }
+
+  .section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+  .section h2 { font-family: 'Poppins', sans-serif; font-size: 1.6rem; font-weight: 600; color: var(--accent); margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--bg3); }
+
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--bg3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .card-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .card h3 { font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
+  .card p { color: var(--muted); font-size: 0.9rem; }
+
+  .demo-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+  .demo-table th { background: var(--bg3); color: var(--accent); padding: 12px 16px; text-align: left; font-size: 0.85rem; font-weight: 600; }
+  .demo-table td { padding: 12px 16px; border-bottom: 1px solid var(--bg3); color: var(--text); font-size: 0.9rem; }
+  .demo-table tr:hover td { background: var(--bg2); }
+  .status { padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+  .in-stock { background: rgba(100,255,218,0.1); color: var(--accent); }
+  .low { background: rgba(255,165,0,0.15); color: orange; }
+  .out { background: rgba(255,80,80,0.15); color: #ff5050; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+  .stat-card { background: var(--bg2); border: 1px solid var(--bg3); border-radius: 12px; padding: 1.5rem; text-align: center; }
+  .stat-card .number { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 700; color: var(--accent); }
+  .stat-card .label { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+
+  .tech-stack { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1rem; }
+  .tech { background: var(--bg3); color: var(--text); padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; }
+
+  footer { background: var(--bg2); text-align: center; padding: 2rem; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--bg3); margin-top: 4rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">📦 Godown Management System</div>
+  <span class="badge">MIS Project</span>
+</header>
+
+<div class="hero">
+  <h1>Godown <span>Management</span> System</h1>
+  <p>A comprehensive Excel & Google Sheets based inventory tracking system for managing multiple godown stock operations, purchase records, and daily reporting.</p>
+  <div class="tags">
+    <span class="tag">Google Sheets</span>
+    <span class="tag">Excel</span>
+    <span class="tag">Inventory</span>
+    <span class="tag">Data Analysis</span>
+    <span class="tag">Automation</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Key Features</h2>
+  <div class="features">
+    <div class="card">
+      <div class="card-icon">🏭</div>
+      <h3>Multi-Godown Tracking</h3>
+      <p>Manage stock, sales, and purchases across multiple godown locations from a single centralized system.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Real-time Stock Monitor</h3>
+      <p>Live inventory levels with automatic low-stock alerts and reorder notifications using conditional formatting.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🧾</div>
+      <h3>Purchase & Sales Challan</h3>
+      <p>Automated challan generation with supplier/customer database integration and payment tracking.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📈</div>
+      <h3>Daily Report Generation</h3>
+      <p>One-click daily expense, purchase, and banking reports submitted automatically to management.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗄️</div>
+      <h3>Supplier & Customer DB</h3>
+      <p>Centralized database of all suppliers and customers with contact info, transaction history, and balances.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔒</div>
+      <h3>Data Security</h3>
+      <p>Role-based access control, protected sheets, and automated backup systems for data integrity.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Live Demo — Stock Overview</h2>
+  <table class="demo-table">
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Godown</th>
+        <th>Stock (kg)</th>
+        <th>Last Purchase</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Recycling Raw Material A</td><td>Godown 01</td><td>4,500</td><td>15 May 2025</td><td><span class="status in-stock">In Stock</span></td></tr>
+      <tr><td>Recycling Raw Material B</td><td>Godown 02</td><td>320</td><td>12 May 2025</td><td><span class="status low">Low Stock</span></td></tr>
+      <tr><td>Recycling Raw Material C</td><td>Godown 03</td><td>0</td><td>01 May 2025</td><td><span class="status out">Out of Stock</span></td></tr>
+      <tr><td>Recycling Raw Material D</td><td>Godown 01</td><td>2,800</td><td>14 May 2025</td><td><span class="status in-stock">In Stock</span></td></tr>
+      <tr><td>Recycling Raw Material E</td><td>Godown 02</td><td>150</td><td>10 May 2025</td><td><span class="status low">Low Stock</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>System Statistics</h2>
+  <div class="stats">
+    <div class="stat-card"><div class="number">5+</div><div class="label">Godowns Managed</div></div>
+    <div class="stat-card"><div class="number">500+</div><div class="label">Daily Transactions</div></div>
+    <div class="stat-card"><div class="number">100%</div><div class="label">Report Accuracy</div></div>
+    <div class="stat-card"><div class="number">2 Yrs</div><div class="label">In Production</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Tech Stack</h2>
+  <div class="tech-stack">
+    <span class="tech">📗 Google Sheets</span>
+    <span class="tech">📘 Microsoft Excel</span>
+    <span class="tech">🔢 VLOOKUP / INDEX-MATCH</span>
+    <span class="tech">📊 Pivot Tables</span>
+    <span class="tech">⚡ Conditional Formatting</span>
+    <span class="tech">🔁 Data Validation</span>
+    <span class="tech">📧 Google Apps Script</span>
+  </div>
+</div>
+
+<footer>
+  Developed by <a href="#">Enamul Hasan</a> — MIS Officer, Givensee Group | &copy; 2025
+</footer>
+
+</body>
+</html>
